@@ -58,4 +58,27 @@ public class OkRegistrationTests extends OkBase {
                 + "-->" + errorDTO.getMessage()
                 + "--> " + errorDTO.getError());
     }
+
+    @Test
+    public void registrationNegativeTest_DuplicateUser() throws IOException {
+        AuthRequestDTO requestDTO = AuthRequestDTO.builder()
+                .username("qwerty3171@gmail.com")
+                .password("Qwerty123!_")
+                .build();
+        System.out.println(requestDTO.toString());
+        RequestBody requestBody = RequestBody.create(gson.toJson(requestDTO), JSON);
+
+        Request request = new Request.Builder()
+                .url(baseUrl + "/v1/user/registration/usernamepassword")
+                .post(requestBody)
+                .build();
+        Response response = client.newCall(request).execute();
+        Assert.assertFalse(response.isSuccessful());
+
+        System.out.println("Response code = " + response.code());
+        ErrorDTO errorDTO = gson.fromJson(response.body().string(), ErrorDTO.class);
+        System.out.println(errorDTO.getStatus()
+                + "-->" + errorDTO.getMessage()
+                + "--> " + errorDTO.getError());
+    }
 }

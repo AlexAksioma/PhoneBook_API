@@ -15,6 +15,6 @@ import lombok.ToString;
 @ToString
 
 public class AuthRequestDTO {
-    String username;
-    String password;
+    private String username;
+    private String password;
 }

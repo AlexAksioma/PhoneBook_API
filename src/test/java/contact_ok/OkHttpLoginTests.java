@@ -17,7 +17,7 @@ public class OkHttpLoginTests extends OkBase{
     @Test
     public void loginTest() throws IOException {
         AuthRequestDTO requestDTO = AuthRequestDTO.builder()
-                .username("qwerty3171gmail.com")
+                .username("qwerty3171@gmail.com")
                 .password("Qwerty123!_")
                 .build();
 

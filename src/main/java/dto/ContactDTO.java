@@ -18,11 +18,11 @@ import lombok.ToString;
 @ToString
 
 public class ContactDTO {
-    String id;
-    String name;
-    String lastName;
-    String email;
-    String phone;
-    String address;
-    String description;
+    private String id;
+    private String name;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String address;
+    private String description;
 }

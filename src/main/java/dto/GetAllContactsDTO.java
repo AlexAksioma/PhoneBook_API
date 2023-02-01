@@ -14,5 +14,5 @@ import java.util.List;
 
 public class GetAllContactsDTO {
 
-    List<ContactDTO> contacts;
+    private List<ContactDTO> contacts;
 }

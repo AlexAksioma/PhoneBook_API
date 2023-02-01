@@ -19,7 +19,8 @@ import lombok.ToString;
 
 public class ErrorDTO {
 
-    int status;
-    String error;
-    String message;
+    private int status;
+    private Object error;
+    private Object message;
+    private String path;
 }
